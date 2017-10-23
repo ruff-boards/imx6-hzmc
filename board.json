@@ -1,0 +1,151 @@
+{
+    "version": "2.0",
+    "id": "imx6-hzmc",
+    "model": "imx6-hzmc",
+    "outputs": {
+        "gnd-0": "ground/gnd-0",
+        "gnd-1": "ground/gnd-1",
+        "vdd-0": "power/vdd-0",
+        "vdd-1": "power/vdd-1",
+        "uart-2": "uart/uart-2",
+        "uart-4": "uart/uart-4"
+    },
+    "devices": [
+        {
+            "id": "ground",
+            "outputs": {
+                "gnd-0": {
+                    "type": "ground"
+                },
+                "gnd-1": {
+                    "type": "ground"
+                }
+            }
+        },
+        {
+            "id": "power",
+            "outputs": {
+                "vdd-0": {
+                    "type": "power",
+                    "args": {
+                        "voltage": "3.3v"
+                    }
+                },
+                "vdd-1": {
+                    "type": "power",
+                    "args": {
+                        "voltage": "5v"
+                    }
+                }
+            }
+        },
+        {
+            "id": "uart-2",
+            "model": "ruff-sys-uart",
+            "driver": "sys-uart",
+            "inputs": {
+                "device": {
+                    "type": "string",
+                    "args": {
+                        "path": "/dev/ttymxc1"
+                    }
+                }
+            },
+            "outputs": {
+                "uart" : {
+                    "type":"uart"
+                }
+            }
+        },
+        {
+            "id": "uart-4",
+            "model": "ruff-sys-uart",
+            "driver": "sys-uart",
+            "inputs": {
+                "device": {
+                    "type": "string",
+                    "args": {
+                        "path": "/dev/ttyS0"
+                    }
+                }
+            },
+            "outputs": {
+                "uart" : {
+                    "type":"uart"
+                }
+            }
+        },
+        {
+            "id": "uart-5",
+            "model": "ruff-sys-uart",
+            "driver": "sys-uart",
+            "inputs": {
+                "device": {
+                    "type": "string",
+                    "args": {
+                        "path": "/dev/ttyS1"
+                    }
+                }
+            },
+            "outputs": {
+                "uart" : {
+                    "type":"uart"
+                }
+            }
+        },
+        {
+            "id": "uart-6",
+            "model": "ruff-sys-uart",
+            "driver": "sys-uart",
+            "inputs": {
+                "device": {
+                    "type": "string",
+                    "args": {
+                        "path": "/dev/ttyS2"
+                    }
+                }
+            },
+            "outputs": {
+                "uart" : {
+                    "type":"uart"
+                }
+            }
+        },
+        {
+            "id": "rs485-1",
+            "model": "rs485-uart2",
+            "driver": "rs485-uart2",
+            "inputs": {
+                "uart": {
+                    "type": "uart",
+                    "args": {
+                        "baudRate": 9600,
+                        "stopBits": 1,
+                        "dataBits": 8,
+                        "parity": "none",
+                        "flowControl": "none"
+                    },
+                    "bind": "uart-5/uart"
+                }
+            }
+        },
+        {
+            "id": "rs485-2",
+            "model": "rs485-uart2",
+            "driver": "rs485-uart2",
+            "inputs": {
+                "uart": {
+                    "type": "uart",
+                    "args": {
+                        "baudRate": 9600,
+                        "stopBits": 1,
+                        "dataBits": 8,
+                        "parity": "none",
+                        "flowControl": "none"
+                    },
+                    "bind": "uart-6/uart"
+                }
+            }
+        }
+    ]
+}
