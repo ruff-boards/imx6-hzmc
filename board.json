@@ -23,9 +23,7 @@
         "gpio-146": "gpio-146/gpio",
         "gpio-158": "gpio-158/gpio",
         "gpio-159": "gpio-159/gpio",
-        "gpio-160": "gpio-160/gpio",
         "gpio-161": "gpio-161/gpio",
-        "gpio-162": "gpio-162/gpio",
         "gpio-163": "gpio-163/gpio"
     },
     "devices": [
@@ -424,34 +422,6 @@
 
         },
         {
-            "id": "gpio-160",
-            "model": "ruff-gpio",
-            "driver": "sys-gpio",
-            "inputs": {
-                "pin":{
-                    "type":"number",
-                    "args":{
-                        "pin":160
-                    }
-                }
-            },
-            "outputs":{
-                "gpio": {
-                    "type": "gpio",
-                    "features":{
-                        "input":[
-                            "read",
-                            "interrupt"
-                        ],
-                        "output":[
-                            "write"
-                        ]
-                    }
-                }
-            }
-
-        },
-        {
             "id": "gpio-161",
             "model": "ruff-gpio",
             "driver": "sys-gpio",
@@ -460,34 +430,6 @@
                     "type":"number",
                     "args":{
                         "pin":161
-                    }
-                }
-            },
-            "outputs":{
-                "gpio": {
-                    "type": "gpio",
-                    "features":{
-                        "input":[
-                            "read",
-                            "interrupt"
-                        ],
-                        "output":[
-                            "write"
-                        ]
-                    }
-                }
-            }
-
-        },
-        {
-            "id": "gpio-162",
-            "model": "ruff-gpio",
-            "driver": "sys-gpio",
-            "inputs": {
-                "pin":{
-                    "type":"number",
-                    "args":{
-                        "pin":162
                     }
                 }
             },

@@ -1,6 +1,6 @@
 {
     "name": "imx6-hzmc",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Metadata for board imx6-hzmc v0.0",
     "author": "Nanchao Inc.",
     "ruff": {
